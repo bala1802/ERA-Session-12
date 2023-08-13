@@ -1,0 +1,7 @@
+torch
+torchvision
+torchaudio
+torchmetrics
+pytorch_lightning
+tensorboard
+torch-tb-profiler
