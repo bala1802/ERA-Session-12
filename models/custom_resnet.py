@@ -7,7 +7,7 @@ from utils.misc import find_lr
 
 
 class ConvLayer(nn.Module):
-    def __init__(self, input_c, output_c, bias=False, stride=1, padding=1, pool=False, dropout=0.2):
+    def __init__(self, input_c, output_c, bias=False, stride=1, padding=1, pool=False, dropout=0.):
         super(ConvLayer, self).__init__()
 
         layers = list()

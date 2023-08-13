@@ -9,6 +9,7 @@ from pytorch_grad_cam.utils.model_targets import ClassifierOutputTarget
 SEED = 42
 DEVICE = None
 
+
 def get_device():
     global DEVICE
     if DEVICE is not None:
@@ -23,10 +24,12 @@ def get_device():
     print("Device Selected:", DEVICE)
     return DEVICE
 
+
 def set_seed(seed=SEED):
     torch.manual_seed(seed)
     if get_device() == 'cuda':
         torch.cuda.manual_seed(seed)
+
 
 def plot_examples(images, labels, figsize=None, n=20):
     _ = plt.figure(figsize=figsize)
@@ -41,6 +44,7 @@ def plot_examples(images, labels, figsize=None, n=20):
         plt.xticks([])
         plt.yticks([])
 
+
 def find_lr(model, data_loader, optimizer, criterion):
     lr_finder = LRFinder(model, optimizer, criterion)
     lr_finder.range_test(data_loader, end_lr=0.1, num_iter=100, step_mode='exp')
@@ -48,10 +52,12 @@ def find_lr(model, data_loader, optimizer, criterion):
     lr_finder.reset()
     return best_lr
 
+
 def get_incorrect_preds(prediction, labels):
     prediction = prediction.argmax(dim=1)
     indices = prediction.ne(labels).nonzero().reshape(-1).tolist()
     return indices, prediction[indices].tolist(), labels[indices].tolist()
+
 
 def get_cam_visualisation(model, dataset, input_tensor, label, target_layer, use_cuda=False):
     grad_cam = GradCAM(model=model, target_layers=[target_layer], use_cuda=use_cuda)
@@ -65,6 +71,7 @@ def get_cam_visualisation(model, dataset, input_tensor, label, target_layer, use
     output = show_cam_on_image(dataset.show_transform(input_tensor).cpu().numpy(), grayscale_cam,
                                use_rgb=True)
     return output
+
 
 def model_summary(model, input_size=None):
     return torchinfo.summary(model, input_size=input_size, depth=5,
