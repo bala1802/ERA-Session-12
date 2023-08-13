@@ -3,7 +3,7 @@ import cv2
 from torchvision import datasets
 import albumentations as A
 
-from generic import MyDataSet
+from .generic import MyDataSet
 
 
 class AlbCIFAR10(datasets.CIFAR10):
