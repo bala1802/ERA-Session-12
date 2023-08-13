@@ -20,7 +20,7 @@ class CIFARDataModule(pl.LightningDataModule):
         self.train_ds = datasets.CIFAR10(
             root=self.data_dir,
             train=True,
-            transform=transforms.compose([
+            transform=transforms.Compose([
                 transforms.RandomVerticalFlip(),
                 transforms.RandomHorizontalFlip(),
                 transforms.ToTensor(),
