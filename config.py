@@ -1,3 +1,8 @@
+import os
+import torch
+
+DATA_DIR = "dataset/"
+
 '''-----------------------------CIFAR10 Datset properties------------------------------'''
 CIFAR_10_DATASET_MEAN = [0.4914, 0.4822, 0.4465]
 CIFAR_10_DATASET_STANDARD_DEVIATION = [0.2470, 0.2435, 0.2616]
@@ -27,3 +32,25 @@ AUGMENTATION_RANDOM_CROP_ALWAYS_APPLY = False
 
 #Mask Fill Value
 AUGMENTATION_MASK_FILL_VALUE = None
+
+'''-----------------------------Model Hyperparameters------------------------------'''
+
+#Neural Network
+LEARNING_RATE = 0.01
+DROP_VALUE = 0.05
+
+#Normalization
+BATCH_NORMALIZATION = "BN"
+LAYER_NORMALIZATION = "LN"
+GROUP_NORMALIZATION = "GN"
+GROUP_SIZE = 1
+
+BATCH_SIZE = 512 if torch.cuda.is_available() else 64
+NUM_WORKERS = int(os.cpu_count() / 2)
+
+#Optimizer
+WEIGHT_DECAY = 5e-4
+STEPS_PER_EPOCH = 50000 // BATCH_SIZE
+
+NUM_EPOCHS = 24
+ACCELERATOR = "gpu"

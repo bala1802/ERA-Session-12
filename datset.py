@@ -2,7 +2,6 @@ import torch
 import torch.nn.functional as F
 import torchvision.datasets as datasets
 
-from torch import nn, optim
 from torch.utils.data import DataLoader
 from torch.utils.data import random_split
 import pytorch_lightning as pl
