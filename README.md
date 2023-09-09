@@ -20,3 +20,11 @@ Move the Session-10 Assignment to Lightning and Spaces
 Accuracy of Images predicted:
 
 ![Alt text](image.png)
+
+GradCAM results:
+
+![Alt text](output/gradcam_output.png)
+
+Misclassified Images:
+
+![Alt text](output/misclassified_images.png)
