@@ -28,3 +28,12 @@ GradCAM results:
 Misclassified Images:
 
 ![Alt text](output/misclassified_images.png)
+
+
+#### Epoch details:
+
+![Alt text](output/tensorboard_output/epoch-details.png)
+
+#### Learning Rate:
+
+![Alt text](output/tensorboard_output/adam_learning_rate.png)
