@@ -17,4 +17,6 @@ Move the Session-10 Assignment to Lightning and Spaces
 
 #### Observations:
 
-- Todo
+Accuracy of Images predicted:
+
+![Alt text](image.png)
