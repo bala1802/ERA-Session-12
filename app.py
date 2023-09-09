@@ -138,8 +138,8 @@ def inference(
     return org_img, preds, cam_outputs, misclf_images_output
 
 
-title = "CIFAR10 trained on Custom Model inspired by ResNet with GradCAM"
-description = "A simple Gradio interface to infer on ResNet model, and get GradCAM results"
+title = "Session 12 Assignment"
+description = "Experimented the custom resnet model to classify the images"
 # examples = [["cat.jpg", 0.5, -1], ["dog.jpg", 0.5, -1]]
 demo = gr.Interface(
     inference,
